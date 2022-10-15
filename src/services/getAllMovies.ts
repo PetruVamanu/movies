@@ -14,7 +14,7 @@ export async function getAllMovies(page : number) {
     );
     // console.log(JSON.stringify(response.data, null, 4));
     const movies = response.data.results;
-    console.log(JSON.stringify(movies, null, 4));
+    console.log(JSON.stringify(response.data, null, 4));
     // return answer;
     return ({
         isOK: true,

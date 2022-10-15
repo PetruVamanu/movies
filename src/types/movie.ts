@@ -3,6 +3,7 @@ export interface MovieType {
     id: number;
     overview: string;
     release_date: string;
+    poster_path: string;
     genres: number[];
   }
 
