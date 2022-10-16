@@ -1,5 +1,4 @@
 import React from "react";
-import { MovieType } from "types/movie";
 import { CategoryEnum, CategoryType, imageURL } from "utils/constants";
 
 export interface NavbarType {
@@ -10,11 +9,7 @@ export interface NavbarType {
 const Navbar: React.FC<NavbarType> = ({ category, onChangeCategory }) => {
   return (
     <div>
-      <button
-        onClick={() => {
-          onChangeCategory(CategoryEnum.popular);
-        }}
-      >
+      <button onClick={() => onChangeCategory(CategoryEnum.popular)}>
         Popular movies
       </button>
       <button onClick={() => onChangeCategory(CategoryEnum.upcoming)}>

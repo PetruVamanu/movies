@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { getAllMovies } from "services/getAllMovies";
-import PageCounter from "pageCounter";
+import PageCounter from "components/pageCounter";
 import { MovieType } from "types/movie";
-import MovieCard from "movieCard";
-import Modal from "Modal/Modal";
-import Navbar from "navbar";
+import MovieCard from "components/movieCard";
+import Modal from "components/Modal/Modal";
+import Navbar from "components/navbar";
+
+
 import { CategoryEnum, CategoryType } from "utils/constants";
 function App() {
   const [page, setPage] = useState<number>(1);

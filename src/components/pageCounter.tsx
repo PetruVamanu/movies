@@ -1,12 +1,11 @@
 import React from "react";
 
 interface counterType {
-    page: number;
-    setPage: React.Dispatch<React.SetStateAction<number>>;
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const pageCounter : React.FC<counterType> = ({page, setPage}) => {
-
+const pageCounter: React.FC<counterType> = ({ page, setPage }) => {
   return (
     <div>
       <button disabled={page === 1} onClick={() => setPage((prev) => prev - 1)}>

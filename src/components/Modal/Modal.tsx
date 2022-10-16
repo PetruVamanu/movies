@@ -1,12 +1,12 @@
-import Genres from "genres";
-import Production from "Production";
+import Genres from "components/genres";
+import Production from "components/Production";
 import React from "react";
 import { getMovieDetails } from "services/getMovieDetails";
 import { getMovieTrailer } from "services/getMovieVideo";
 import { EmptyMovieDetail, MovieDetailsType } from "types/movie";
 import { TrailerType } from "types/trailer";
 import { imageURL, imdbURL } from "utils/constants";
-import YoutubeEmbed from "YoutubeFrame/YoutubeEmbed";
+import YoutubeEmbed from "components/YoutubeFrame/YoutubeEmbed";
 import "./Modal.css";
 
 interface modalType {
@@ -108,7 +108,7 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
             </div>
           </div>
 
-          <Genres array={genres} />
+          <Genres genres={genres} />
           <Production companies={production_companies} />
         </div>
 
