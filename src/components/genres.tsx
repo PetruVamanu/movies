@@ -10,7 +10,7 @@ const Genres: React.FC<GenresType> = ({ genres }) => {
 
   return (
     <div>
-      Genres:
+      <span className="text-blue-500">Genres:</span>
       <ul>
         {genres.map(({ name }, idx) => (
           <li key={idx}>{name}</li>

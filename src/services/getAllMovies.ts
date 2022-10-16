@@ -1,5 +1,5 @@
 import { MovieResponseType } from "types/movie";
-import { baseURL } from "utils/constants";
+import { baseURL } from "utilities/constants";
 import axios from "axios";
 
 export async function getAllMovies(page : number, category: string) {

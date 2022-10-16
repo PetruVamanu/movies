@@ -1,4 +1,4 @@
-import { baseURL } from "utils/constants";
+import { baseURL } from "utilities/constants";
 import axios from "axios";
 import { MovieDetailsType } from "types/movie";
 

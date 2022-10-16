@@ -10,7 +10,7 @@ const Production: React.FC<ProductionType> = ({ companies }) => {
 
   return (
     <div>
-      Production:
+    <span className="text-blue-500">Production studios:</span>
       <ul>
         {companies.map(({ name }, idx) => (
           <li key={idx}>{name}</li>

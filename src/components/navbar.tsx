@@ -1,5 +1,5 @@
 import React from "react";
-import { CategoryEnum, CategoryType, imageURL } from "utils/constants";
+import { CategoryEnum, CategoryType } from "utilities/constants";
 
 export interface NavbarType {
   category: string;
@@ -8,14 +8,14 @@ export interface NavbarType {
 
 const Navbar: React.FC<NavbarType> = ({ category, onChangeCategory }) => {
   return (
-    <div>
-      <button onClick={() => onChangeCategory(CategoryEnum.popular)}>
+    <div className="flex justify-evenly text-3xl font-semibold  text-blue-500">
+      <button className="hover:underline" onClick={() => onChangeCategory(CategoryEnum.popular)}>
         Popular movies
       </button>
-      <button onClick={() => onChangeCategory(CategoryEnum.upcoming)}>
+      <button className="hover:underline" onClick={() => onChangeCategory(CategoryEnum.upcoming)}>
         Upcoming movies
       </button>
-      <button onClick={() => onChangeCategory(CategoryEnum.top_rated)}>
+      <button className="hover:underline" onClick={() => onChangeCategory(CategoryEnum.top_rated)}>
         Top rated movies
       </button>
     </div>
