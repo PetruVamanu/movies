@@ -89,7 +89,10 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
               <ul>
                 <li>
                   
-                  <a href={homepage}>Netflix Link</a>
+                  <a href={homepage} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                     >Netflix Link</a>
                 </li>
                 <li>
                   

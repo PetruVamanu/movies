@@ -2,10 +2,10 @@ import { MovieResponseType } from "types/movie";
 import { baseURL } from "utils/constants";
 import axios from "axios";
 
-export async function getAllMovies(page : number) {
+export async function getAllMovies(page : number, category: string) {
   try {
     const response = await axios.get<MovieResponseType>(
-      baseURL + "movie/popular/?api_key=" + process.env.REACT_APP_API_KEY +"&language=en-US&page=" + page,
+      baseURL + "movie/"+ category +"/?api_key=" + process.env.REACT_APP_API_KEY +"&language=en-US&page=" + page,
       {
         headers: {
           Accept: "application/json",
