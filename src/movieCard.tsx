@@ -2,7 +2,14 @@ import React from "react";
 import { MovieType } from "types/movie";
 import { imageURL } from "utils/constants";
 
-const movieCard : React.FC<MovieType>= ({title, id, overview, release_date, poster_path}) => {
+export interface MovieCardType{
+  movie: MovieType;
+  setMovieId : React.Dispatch<React.SetStateAction<number>>;
+}
+
+const movieCard : React.FC<MovieCardType>= ({movie, setMovieId}) => {
+
+  const {title, id, overview, release_date, poster_path} = movie;
 
   return (
     <div>
@@ -15,7 +22,7 @@ const movieCard : React.FC<MovieType>= ({title, id, overview, release_date, post
         </div>
       </div>
       <div>Release date: {release_date}</div>
-      <button>More details</button>
+      <button onClick={() => { setMovieId(id); }}>More details</button>
     </div>
   );
 };
