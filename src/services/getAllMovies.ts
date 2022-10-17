@@ -20,6 +20,7 @@ export async function getAllMovies(page : number, category: string) {
         isOK: true,
         message: 'Request completed',
         movies,
+        total_pages:response.data.total_pages,
     });
 
   } catch (error) {
@@ -36,6 +37,7 @@ export async function getAllMovies(page : number, category: string) {
         isOK: false,
         message: messageError,
         movies: [],
+        total_pages: 0,
     });
   }
 

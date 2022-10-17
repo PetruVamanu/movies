@@ -24,3 +24,7 @@
   overflow-y: auto;
   @apply p-3;
 }
+
+.link{
+  @apply hover:underline
+}

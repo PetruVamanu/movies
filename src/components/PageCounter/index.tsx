@@ -3,10 +3,11 @@ import styles from "./PageCounter.module.css";
 
 interface counterType {
   page: number;
+  totalPages: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const pageCounter: React.FC<counterType> = ({ page, setPage }) => {
+const pageCounter: React.FC<counterType> = ({ page, setPage, totalPages }) => {
   return (
     <div className={styles.container}>
       <button
@@ -16,7 +17,7 @@ const pageCounter: React.FC<counterType> = ({ page, setPage }) => {
       >
         prev
       </button>
-      <span className={styles.pageNumber}>{page}</span>
+      <span className={styles.pageNumber}>{page}/{totalPages}</span>
       <button
         className={styles.button}
         onClick={() => setPage((prev) => prev + 1)}

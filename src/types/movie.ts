@@ -41,5 +41,6 @@ export const EmptyMovieDetail : MovieDetailsType = {
 
 export interface MovieResponseType {
   page: number;
+  total_pages: number;
   results: MovieType[];
 }

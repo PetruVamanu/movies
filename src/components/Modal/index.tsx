@@ -64,8 +64,11 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
     vote_average,
   } = openedMovie;
   return (
-    <div className={styles.modal}>
-      <div className={styles.content}>
+    <div className={styles.modal} onClick={() => {
+      setMovieId(-1);
+      setOpenedMovie(EmptyMovieDetail);
+    }}>
+      <div className={styles.content} onClick={e => e.stopPropagation()}>
         <div className={styles.header}>
           <h3 className="font-bold text-blue-500 text-3xl">{title}</h3>
         </div>
@@ -106,7 +109,7 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
                 <h5 className="text-blue-500">Links:</h5>
                 <ul>
                   <li>
-                    <a
+                    <a className={styles.link}
                       href={homepage}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -115,7 +118,7 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
                     </a>
                   </li>
                   <li>
-                    <a
+                    <a className={styles.link}
                       href={imdbURL + imdb_id}
                       target="_blank"
                       rel="noopener noreferrer"
