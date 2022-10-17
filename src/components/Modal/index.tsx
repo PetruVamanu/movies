@@ -114,7 +114,7 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Netflix Link
+                      Movie Link
                     </a>
                   </li>
                   <li>
