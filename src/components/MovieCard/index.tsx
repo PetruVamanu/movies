@@ -14,7 +14,7 @@ const movieCard: React.FC<MovieCardType> = ({ movie, setMovieId }) => {
     <div className="container mx-auto flex flex-col flex-warp items-center justify-center p-4 border-2 rounded-3xl my-3 ">
       <h1 className="font-bold text-blue-500 text-xl pb-6">{title}</h1>
       <div className="flex-1 ">
-        <div className="flex flex-row flex-wrap justify-center">
+        <div className="flex flex-row flex-wrap-reverse justify-center">
           <div className="min-w-[200px] max-w-sm">
             <h2 className="font-semibold underline text-blue-500 text-lg">Description</h2>
             <p className="font-extralight text-ellipsis">{overview}</p>

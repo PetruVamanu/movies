@@ -40,8 +40,8 @@ function App() {
       />
       <PageCounter page={page} setPage={setPage} />
       <Modal movieId={movieId} setMovieId={setMovieId} />
-      <div className="w-full h-full flex-1 p-2 md:p-4 xl:p-6">
-        <div className="grid grid-cols-1 px-1 md:px-14 lg:grid-cols-2 2xl:grid-cols-3 gap-5  mx-auto">
+      <div className="w-full h-full flex-1 p-2 md:p-4 xl:p-6 mb-[6rem]">
+        <div className="grid grid-cols-1 px-1 md:px-14 lg:grid-cols-2 xl:grid-cols-3 gap-5  mx-auto">
           {
             /* {JSON.stringify(movies, null, 4)} */
             movies.map((movieData: MovieType) => {
