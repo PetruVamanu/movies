@@ -1,0 +1,9 @@
+.button {
+    @apply py-3 hover:underline;
+}
+
+.container {
+    @apply flex justify-evenly sticky  top-0 flex-wrap;
+    @apply text-2xl text-gray-100 font-semibold bg-blue-600;
+    @apply py-4 shadow-xl mb-4;
+}

@@ -1,0 +1,26 @@
+.modal {
+  @apply fixed left-0 top-0 right-0 bottom-0;
+  @apply flex items-center justify-center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+  @apply p-3 flex justify-center;
+}
+
+.header {
+  @apply flex items-center justify-center p-3 pb-8;
+}
+
+.content {
+  @apply bg-gray-50 p-8 border border-gray-300 w-[80%];
+  @apply rounded-xl;
+  margin: 15% auto; 
+}
+
+.body {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  @apply p-3;
+}

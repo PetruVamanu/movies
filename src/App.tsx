@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { getAllMovies } from "services/getAllMovies";
-import PageCounter from "components/pageCounter";
+import { getAllMovies } from "services/GetAllMovies";
+import PageCounter from "components/PageCounter";
 import { MovieType } from "types/movie";
-import MovieCard from "components/movieCard";
-import Modal from "components/Modal/Modal";
-import Navbar from "components/navbar";
+import MovieCard from "components/MovieCard";
+import Modal from "components/Modal";
+import Navbar from "components/Navbar";
 
 import { CategoryEnum, CategoryType } from "utilities/constants";
 function App() {
@@ -30,7 +30,7 @@ function App() {
   }, [page, category, handleGetAllMovies]);
 
   return (
-    <div className="w-full h-full p-8 font-roboto">
+    <div className="w-full h-full font-roboto">
       <Navbar
         category={category}
         onChangeCategory={(category: CategoryType) => {
@@ -39,10 +39,9 @@ function App() {
         }}
       />
       <PageCounter page={page} setPage={setPage} />
-
       <Modal movieId={movieId} setMovieId={setMovieId} />
       <div className="w-full h-full flex-1 p-2 md:p-4 xl:p-6">
-        <div className="grid grid-cols-1 px-1 md:px-14 lg:grid-cols-2 xl:grid-cols-3 gap-5  mx-auto">
+        <div className="grid grid-cols-1 px-1 md:px-14 lg:grid-cols-2 2xl:grid-cols-3 gap-5  mx-auto">
           {
             /* {JSON.stringify(movies, null, 4)} */
             movies.map((movieData: MovieType) => {
@@ -57,7 +56,6 @@ function App() {
           }
         </div>
       </div>
-      <PageCounter page={page} setPage={setPage} />
     </div>
   );
 }

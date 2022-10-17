@@ -1,13 +1,13 @@
-import Genres from "components/genres";
+import Genres from "components/Genres";
 import Production from "components/Production";
 import React from "react";
-import { getMovieDetails } from "services/getMovieDetails";
-import { getMovieTrailer } from "services/getMovieVideo";
+import { getMovieDetails } from "services/GetMovieDetails";
+import { getMovieTrailer } from "services/GetMovieVideo";
 import { EmptyMovieDetail, MovieDetailsType } from "types/movie";
 import { TrailerType } from "types/trailer";
 import { imageURL, imdbURL } from "utilities/constants";
 import YoutubeEmbed from "components/YoutubeFrame/YoutubeEmbed";
-import "./Modal.css";
+import styles from "./Modal.module.css";
 
 interface modalType {
   movieId: number;
@@ -64,15 +64,15 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
     vote_average,
   } = openedMovie;
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <div className="flex modal-header items-center justify-center">
-          <h3 className="font-bold text-blue-500 text-xl">{title}</h3>
+    <div className={styles.modal}>
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <h3 className="font-bold text-blue-500 text-3xl">{title}</h3>
         </div>
-        <div className="modal-body p-3">
+        <div className={styles.body}>
           <div className="flex flex-col">
-            <div className="flex flex-row items-center justify-center p-5">
-              <div className="flex w-3/5">
+            <div className="flex flex-row flex-wrap items-center justify-center p-5">
+              <div className="flex flex-1 min-w-[200px]">
                 <div className="flex flex-col">
                   <h4 className="font-bold text-blue-500 text-lg underline">
                     Description
@@ -80,25 +80,28 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
                   {overview}
                 </div>
               </div>
-              <div className="flex flex-col w-1/5">
-                <div>
-                  <span className="text-blue-500">Release date:</span>{" "}
-                  {release_date}
-                </div>
-                <div>
-                  <span className="text-blue-500">Duration:</span> {runtime}{" "}
-                  mins
-                </div>
-                <div>
-                  <span className="text-blue-500">Rating:</span> {vote_average}
+              <div className="flex flex-col flex-1 min-w-[200px]">
+                <div className="md:px-12 my-5 md:my-0">
+                  <div>
+                    <span className="text-blue-500">Release date:</span>{" "}
+                    {release_date}
+                  </div>
+                  <div>
+                    <span className="text-blue-500">Duration:</span> {runtime}{" "}
+                    mins
+                  </div>
+                  <div>
+                    <span className="text-blue-500">Rating:</span>{" "}
+                    {vote_average}
+                  </div>
                 </div>
               </div>
               <img src={imageURL + poster_path} alt="" />
             </div>
 
-            <YoutubeEmbed embedId={trailer.key} />
+            <hr />
 
-            <div className="flex flex-row justify-evenly text-center pt-5">
+            <div className="flex flex-row flex-wrap justify-evenly text-center py-7">
               <div className="flex flex-col">
                 <h5 className="text-blue-500">Links:</h5>
                 <ul>
@@ -123,15 +126,24 @@ const Modal: React.FC<modalType> = ({ movieId, setMovieId }) => {
                 </ul>
               </div>
 
-            <Genres genres={genres} />
-            <Production companies={production_companies} />
+              <div className="min-w-[200px] my-4 md:my-0">
+                <Genres genres={genres} />
+              </div>
+              <div className="min-w-[200px]">
+                <Production companies={production_companies} />
+              </div>
+            </div>
+
+            <hr />
+            <div className="m-5">
+              <YoutubeEmbed embedId={trailer.key} />
             </div>
           </div>
         </div>
 
-        <div className="modal-footer">
+        <div className={styles.footer}>
           <button
-            className="close-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
             onClick={() => {
               setMovieId(-1);
               setOpenedMovie(EmptyMovieDetail);
